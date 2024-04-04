@@ -3,7 +3,7 @@ const { readAndAppend, readFromFile } = require('../helpers/Utils');
 
 // const readFromFile = util.promisify(fs.readFile);
 
-router.get('/api/notes', (req, res) => {
+router.get('/notes', (req, res) => {
     console.log('Reading file...');
     readFromFile('./db/db.json')
         .then((data) => {

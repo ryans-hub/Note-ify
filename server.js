@@ -1,11 +1,12 @@
 const express = require('express');
 const fs = require ('fs');
-const htmlRoutes = require('./routes/htmlRoutes');
+// const routes = require('./routes');
 const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
 
 const app = express();
 
-const path = require('path');
+// const path = require('path');
 
 const PORT = 3001;
 
@@ -29,8 +30,10 @@ app.use(express.urlencoded({extended : true}));
 // app.use('/', htmlRoutes);
 // app.use('/api', apiRoutes);
 
-app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
+
+// app.use(routes);
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
