@@ -11,5 +11,5 @@ This application uses provided source code, and achieves the utility of allowing
 
 ![Demo](./public/assets/demo.JPG)
 
-https://github.com/ryans-hub/Note-ify
+https://note-ify-ae28f0d664e5.herokuapp.com/
 
