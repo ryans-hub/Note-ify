@@ -8,8 +8,7 @@ const app = express();
 
 // const path = require('path');
 
-const PORT = 3001;
-
+const PORT = process.env.PORT || 3001; // Default to port 3001 if PORT environment variable is not set
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
