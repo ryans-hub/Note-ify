@@ -1,14 +1,26 @@
 const router = require('express').Router();
-const fs = require('fs');
-const util = require('util');
+const { readAndAppend, readFromFile } = require('../helpers/Utils');
 
-const readFromFile = util.promisify(fs.readFile);
+// const readFromFile = util.promisify(fs.readFile);
 
-router.get('/', (req, res) => {
-    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+router.get('/api/notes', (req, res) => {
+    console.log('Reading file...');
+    readFromFile('./db/db.json')
+        .then((data) => {
+            console.log('File read successfully');
+            res.json(JSON.parse(data));
+        })
+        .catch((err) => {
+            console.error('Error reading file:', err);
+            res.status(500).send('Internal Server Error');
+        });
 });
 
 //router.post blah blah
 // look at mini project hint
 
-module.export = router;
+router.post('/', (req, res) => {
+
+}) 
+
+module.exports = router;

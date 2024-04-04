@@ -26,9 +26,11 @@ app.use(express.urlencoded({extended : true}));
 
 // );
 
+// app.use('/', htmlRoutes);
+// app.use('/api', apiRoutes);
+
 app.use('/', htmlRoutes);
 app.use('/api', apiRoutes);
-
 
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
